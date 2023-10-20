@@ -263,7 +263,7 @@ export default function Home() {
                     {selectedProject.technologies.map((tech, index) => (
                       <span
                         key={index}
-                        className="bg-gray-200 rounded-full dark:text-black px-3 py-1 text-sm"
+                        className="bg-gray-200 rounded-full font-bold dark:text-black px-3 py-1 text-sm"
                       >
                         {tech}
                       </span>
@@ -271,22 +271,20 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <a
-                    href={selectedProject.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline"
+                  <button
+                    onClick={() =>
+                      window.open(selectedProject.github, "_blank")
+                    }
+                    className="w-max inline-block text-gray-800 text-base font-bold px-6 py-2 border border-teal-500 bg-white rounded-md cursor-pointer"
                   >
                     Github
-                  </a>
-                  <a
-                    href={selectedProject.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline"
+                  </button>
+                  <button
+                    onClick={() => window.open(selectedProject.demo, "_blank")}
+                    className="w-max inline-block text-gray-800 px-6 py-2 border text-base font-bold border-gray-500 rounded-md bg-teal-300 cursor-pointer"
                   >
                     Demo
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
